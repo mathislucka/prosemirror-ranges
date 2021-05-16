@@ -1,0 +1,154 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+span[data-range] {
+    background-color: #c3daef;
+}
+
+span[data-range-confirmed="true"] {
+    background-color: lightgray;
+}
+
+span[data-range-active="true"] {
+    background-color: bisque;
+}
+
+span[data-range-moving="true"] {
+    background-color: transparent;
+}
+
+span[data-range-selected], span[data-range-selected] > span {
+    background-color: #d5f4e6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.range-decoration__button {
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    padding: 5px 5px;
+    border-radius: 3px;
+}
+  
+  .clickshadow {
+    box-shadow: 1px 1px 3px rgb(72, 72, 72);
+  }
+  
+  .lessshadow {
+    box-shadow: 1px 1px 1px rgb(72, 72, 72);
+  }
+  
+.range-decoration__inner {
+    display: inline-block;
+    background-color: rgb(10, 132, 255);
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    position: relative;
+    box-shadow: 
+      inset 2px 2px 3px rgb(90, 200, 250),
+      1px 1px 2px rgb(88, 86, 214);
+    cursor: pointer;
+}
+
+.range-decoration__inner--active {
+    background-color: rgb(255, 45, 85);
+    box-shadow:
+      inset 2px 2px 3px rgb(150, 29, 57),
+      1px 1px 2px rgb(88, 86, 214);
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.pr-5 {
+    padding-right: 10px;
+}
+
+.menu-btn {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    color: rgb(10, 132, 255);
+}
+
+.edit-container {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    background-color: #ebf3fa;
+    padding: 2rem;
+    box-shadow: 1px 1px 2px rgb(72, 72, 72);
+    width: 440px;
+}
+
+pre {
+    text-overflow: ellipsis;
+    width: 400px;
+    overflow: hidden;
+    display: block;
+}
+
+.display--none {
+    display: none;
+}
+
+.edit-container button {
+    color: white;
+    background-color: rgb(10, 132, 255);
+    border-radius: 3px;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+}
+
+.edit-container button:hover {
+    background-color: #0072e6;
+}
+
+#editor {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.wrapper {
+    position: relative;
+}

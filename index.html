@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel=stylesheet href="https://prosemirror.net/css/editor.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="wrapper">
+        <div id=editor style="margin-bottom: 0"></div>
+        <div style="display: none" id="content">
+            <p>
+                This editor uses plugins to track range shaped information. Range shaped information can be comments or
+                some form of highlighting.
+            </p>
+            <p>
+                Ranges are represented as marks. However, a single mark can't represent a range when it contains multiple block nodes with
+                inline content. Each block node's content will get a mark. In order to allow ranges across block nodes, a plugin keeps track
+                of all the marks sharing a common attribute. Some utility function calculates the range which is covered by marks with the
+                same attribute.
+            </p>
+            <p><span data-range="some-range" data-pm-id="some-id">Ranges can be confirmed. A range which is not confirmed has a lightblue background.</span></p>
+            <p><span data-range="some-other-range" data-range-confirmed="true" data-pm-id="some-other-id">A range which is confirmed has a gray background.</span></p>
+            <p>
+                To create a new range, select some text which is not part of a range already. A tooltip will appear which lets you create a new
+                range spanning the selected text.
+            </p>
+            <p>
+                Sometimes, a range needs to be extended or shortened. To move a range's boundaries, drop into range editing mode, click on one
+                of the blue circles and then move the cursor to the place where the new boundary should be. When you're done adjusting a boundary
+                click on the (red) circle again.
+            </p>
+            <p>
+                Two callbacks can be provided when initializing the plugin. One will be called whenever a range changes. It will contain the
+                current and previous state of all ranges within the document. The second callback is called whenever the edit mode is triggered,
+                it receives the range currently being edited. 
+            </p>
+        </div>
+        <div class="edit-container display--none">
+            <h1>Currently Editing</h1>
+            <div id="json"></div>
+            <button>Stop Editing</button>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
