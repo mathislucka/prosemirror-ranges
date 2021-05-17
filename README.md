@@ -4,3 +4,4 @@ This is a proof of concept for the representation of range shaped information in
 
 This is not intended to be used as a library. Concepts used here should merely serve as an inspiration for devs trying to implement a similar use case.
 
+[See the demo](https://mathislucka.github.io/prosemirror-ranges)
