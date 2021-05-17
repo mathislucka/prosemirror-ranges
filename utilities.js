@@ -161,6 +161,15 @@ const isSuperset = (set, subset) => {
     return true
 }
 
+/**
+ * 
+ * @param {prosemirror-view} view 
+ * @param {Number} anchor 
+ * @param {Number} head 
+ * @returns {tippy-instance}
+ * 
+ * This creates a tippy tooltip menu which can be used to create a new range.
+ */
 const createCreatorMenu = (view, anchor, head) => {
     const btn = document.createElement('button')
     btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>'
@@ -196,6 +205,16 @@ const createCreatorMenu = (view, anchor, head) => {
 
 }
 
+/**
+ * 
+ * @param {prosemirror-view} view 
+ * @param {prosemirror-pluginKey} rangerTrackerKey 
+ * @param {prosemirror-pluginKey} rangeEditingManagerKey 
+ * @param {String} rangeId 
+ * @returns {HTMLElement}
+ * 
+ * This creates content for a bubble menu allowing to confirm, edit or delete ranges. 
+ */
 const createRangeMenu = (view, rangerTrackerKey, rangeEditingManagerKey, rangeId) => {
     const wrapper = document.createElement('div')
     const activeRange = rangerTrackerKey.getState(view.state)[rangeId]
